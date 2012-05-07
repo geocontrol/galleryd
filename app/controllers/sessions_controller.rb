@@ -12,9 +12,15 @@ class SessionsController < ApplicationController
     
     self.current_user = @auth.user
     
-    render :text => "Welcome, #{current_user.name}."
+    redirect_to galleries_url, notice: "Welcome, #{current_user.name}."
   end
 
+  def destroy
+    session[:user_id] = nil
+    redirect_to galleries_url, notice: "Signed out!"
+  end
+  
   def failure
+    redirect_to galleries_url, alert: "Authentication failed, please try again."
   end
 end
