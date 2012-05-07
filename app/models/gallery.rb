@@ -11,5 +11,5 @@
 
 class Gallery < ActiveRecord::Base
   attr_accessible :name, :url
-  has_many :shows
+  has_many :shows, dependent: :destroy
 end

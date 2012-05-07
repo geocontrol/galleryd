@@ -10,6 +10,15 @@
   <%= @gallery.url %>
 </p>
 
+<p>
+	<% if @gallery.shows.any? %>
+		<h3>Shows (<%= @gallery.shows.count %>)</h3>
+		<ol>
+			<%= render @shows %>
+		</ol>
+	<% end %>
+</p>
+
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               galleries_path, :class => 'btn'  %>
