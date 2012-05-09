@@ -14,7 +14,7 @@
     <% @galleries.each do |gallery| %>
       <tr>
         <td><%= link_to gallery.id, gallery_path(gallery) %></td>
-        <td><%= gallery.name %></td>
+        <td><%= link_to gallery.name, gallery_path(gallery) %></td>
         <td><%= gallery.url %></td>
         <td><%=l gallery.created_at %></td>
         <td>

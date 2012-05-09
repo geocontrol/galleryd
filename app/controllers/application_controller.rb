@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
     @current_user = user
     session[:user_id] = user.id
   end
+  
+  def get_gallery(id)
+    @gallery ||= Gallery.find_by_id(params[:id])
+  end
 end
