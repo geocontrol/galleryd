@@ -31,7 +31,12 @@
 	  </div>
 	</div>
 <div class="container">
-	<%= notice %>
+	<% if current_user %>
+		Welcome, <%= current_user.name %>!
+	<% else %>
+		<%= link_to "Sign in with Twitter", "/auth/twitter" %>
+	<% end %>
+	
 	<div class="row">
 		<div class="span9"><%= yield %></div>
 		<div class="span3">
