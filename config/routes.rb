@@ -1,7 +1,7 @@
 Galleryd::Application.routes.draw do
 
   get '/login', :to => 'sessions#new', :as => :login
-  get '/logout', :to => 'sessions#destroy'
+  get '/logout', :to => 'sessions#destroy', :as => :logout
   match '/auth/:provider/callback', :to => 'sessions#create'
   match '/auth/failure', :to => 'sessions#failure'
   
