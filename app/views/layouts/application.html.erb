@@ -25,7 +25,7 @@
 	          <li><%= link_to "Browse Galleries", galleries_path %></li>
 	          <li><%= link_to "Shows", shows_path %></li>
 	          <li><%= link_to "Contact Us" %></li>
-			  <li><% if current_user %>
+			  <li><% if signed_in? %>
 				Welcome, <%= current_user.name %>!
 				<%= link_to "Sign out", :logout %>
 			<% else %>
@@ -43,7 +43,7 @@
 		<div class="span9"><%= yield %></div>
 		<div class="span3">
 			<h2>About Us</h2>
-			<p>Lorum ipsum dolor sit amet,</p>
+			<p>This is the very ALPHA site about visiting and sharing your experiences at art shows and cultural events. If you have any feedback, from 'its broken' to 'can it do this' then please email galleryd@maahee.com and let us know.</p>
 		</div>
 	</div>
 </div>

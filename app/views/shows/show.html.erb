@@ -18,7 +18,7 @@
   <%= @gallery.name %>
 </p>
 
-<% if current_user %>
+<% if signed_in? %>
 
 <div class="attendance-actions">
 	<p>Link to say 'I am Going To This Show'</p>
@@ -28,6 +28,7 @@
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               shows_path, :class => 'btn'  %>
+<% if signed_in? && current_user.name == "Mark Simpkins" %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_show_path(@show), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -35,5 +36,6 @@
               :method => 'delete',
               :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
               :class => 'btn btn-danger' %>
+<% end %>
 </div>
 
