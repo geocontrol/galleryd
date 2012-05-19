@@ -10,6 +10,6 @@
 #
 
 class Gallery < ActiveRecord::Base
-  attr_accessible :name, :url
+  attr_accessible :name, :url, :address1, :address2, :postcode
   has_many :shows, dependent: :destroy
 end

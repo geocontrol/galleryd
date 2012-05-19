@@ -9,7 +9,18 @@
   <strong><%= model_class.human_attribute_name(:url) %>:</strong><br>
   <%= @gallery.url %>
 </p>
-
+<p>
+  <strong><%= model_class.human_attribute_name(:address1) %>:</strong><br>
+  <%= @gallery.address1 %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:address2) %>:</strong><br>
+  <%= @gallery.address2 %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:postcode) %>:</strong><br>
+  <%= @gallery.postcode %>
+</p>
 <p>
 	<% if @gallery.shows.any? %>
 		<h3>Shows (<%= @gallery.shows.count %>)</h3>
