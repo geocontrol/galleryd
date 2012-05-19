@@ -17,6 +17,6 @@ class ApplicationController < ActionController::Base
   end
   
   def get_gallery(id)
-    @gallery ||= Gallery.find_by_id(params[:id])
+    @gallery = Gallery.find_by_id(params[:id])
   end
 end

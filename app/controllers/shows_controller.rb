@@ -14,7 +14,8 @@ class ShowsController < ApplicationController
   # GET /shows/1.json
   def show
     @show = Show.find(params[:id])
-    get_gallery(@show.gallery_id)
+  #  get_gallery(@show.gallery_id)
+  @gallery = Gallery.find_by_id(@show.gallery_id)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @show }
