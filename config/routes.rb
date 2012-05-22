@@ -6,9 +6,10 @@ Galleryd::Application.routes.draw do
   match '/auth/failure', :to => 'sessions#failure'
   
   resources :shows
-
   resources :galleries
 
+  resources :show_relationships, only: [:create, :destroy]
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

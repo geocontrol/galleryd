@@ -13,4 +13,6 @@
 class Show < ActiveRecord::Base
   attr_accessible :end, :name, :start, :gallery_id
   belongs_to :gallery
+  has_many :show_relationships, foreign_key: "followed_id", dependent: :destroy
+
 end

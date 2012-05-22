@@ -17,11 +17,18 @@
   <strong><%= model_class.human_attribute_name(:gallery_id) %>:</strong><br>
   <%= @gallery.name %>
 </p>
+<p>
+  <strong><%= model_class.human_attribute_name(:show_id) %>:</strong><br>
+  <%= @show.id %>
+</p>
+<div class="span8">
+    <%= render 'follow_form' if signed_in? %>    
+</div>
+
 
 <% if signed_in? %>
 
 <div class="attendance-actions">
-	<p>Link to say 'I am Going To This Show'</p>
 	<p>Link to say 'I have been to this show</p>
 </div>
 <% end %>
