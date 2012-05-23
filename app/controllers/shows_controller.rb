@@ -37,6 +37,7 @@ class ShowsController < ApplicationController
   # GET /shows/1/edit
   def edit
     @show = Show.find(params[:id])
+    @galleries = Gallery.all
   end
 
   # POST /shows

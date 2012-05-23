@@ -18,10 +18,14 @@
   <%= @gallery.name %>
 </p>
 <p>
+  <strong><%= model_class.human_attribute_name(:hastag) %>:</strong><br>
+  <%= @show.hashtag%>
+</p>
+<p>
   <strong><%= model_class.human_attribute_name(:show_id) %>:</strong><br>
   <%= @show.id %>
 </p>
-<div class="span8">
+<div class="span4">
     <%= render 'follow_form' if signed_in? %>    
 </div>
 

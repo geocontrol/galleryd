@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120519180727) do
+ActiveRecord::Schema.define(:version => 20120523205504) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20120519180727) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "gallery_id"
+    t.string   "hashtag"
   end
 
   add_index "shows", ["gallery_id"], :name => "index_shows_on_gallery_id"
