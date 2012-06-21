@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
 
   def create
     auth = request.env['omniauth.auth']
+ # auth = User.from_omniauth(env["omniauth.auth"])
 #    render :text => auth.to_yaml
 
     unless @auth = Authorization.find_from_hash(auth)

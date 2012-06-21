@@ -29,7 +29,9 @@
 				Welcome, <%= current_user.name %>!
 				<%= link_to "Sign out", :logout %>
 			<% else %>
-				<%= link_to "Sign in with Twitter", "/auth/twitter" %>
+				<%= link_to "Sign in with Twitter", "/auth/twitter" %> 
+				<%= link_to "Create an account", "/auth/identity/register" %> 
+				<%= link_to "login", "/auth/identity" %>
 			<% end %></li>
 	        </ul>
 	      </div>
