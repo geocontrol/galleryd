@@ -5,11 +5,10 @@ class User < ActiveRecord::Base
   has_many :show_relationships, foreign_key: "follower_id", dependent: :destroy
 
   def self.from_omniauth(auth)  
- #   find_by_provider_and_uid(auth['provider'], auth['uid']) || create_with_omniauth(auth) 
-    find_by_provider_and_uid(auth['provider'], auth['uid']) || create_with_omniauth(auth) 
+    where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
   end  
 
-    def self.create_with_omniauth(auth)  
+    def self.create_from_omniauth(auth)  
       create! do |user|  
         user.provider = auth["provider"]  
         user.uid = auth["uid"]  

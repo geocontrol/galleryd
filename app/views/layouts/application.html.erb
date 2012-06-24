@@ -25,9 +25,9 @@
 	          <li><%= link_to "Browse Galleries", galleries_path %></li>
 	          <li><%= link_to "Shows", shows_path %></li>
 	          <li><%= link_to "Contact Us", "/contact" %></li>
-			  <li><% if signed_in? %>
+			  <li><% if current_user %>
 				Welcome, <%= current_user.name %>!
-				<%= link_to "Sign out", :logout %>
+				<%= link_to "Sign out", signout_path %>
 			<% else %>
 				<%= link_to "Sign in with Twitter", "/auth/twitter" %> 
 				<%= link_to "Create an account", "/auth/identity/register" %> 
