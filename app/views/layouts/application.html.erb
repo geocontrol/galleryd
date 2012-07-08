@@ -26,12 +26,12 @@
 	          <li><%= link_to "Shows", shows_path %></li>
 	          <li><%= link_to "Contact Us", "/contact" %></li>
 			  <li><% if current_user %>
-				Welcome, <%= current_user.name %>!
-				<%= link_to "Sign out", signout_path %>
+				Welcome, <%= current_user.name %>!</li>
+				<li><%= link_to "Sign out", signout_path %>
 			<% else %>
-				<%= link_to "Sign in with Twitter", "/auth/twitter" %> 
-				<%= link_to "Create an account", "/auth/identity/register" %> 
-				<%= link_to "login", "/auth/identity" %>
+				<%= link_to "Sign in with Twitter", "/auth/twitter" %></li>
+				<li><%= link_to "Create an account", "/auth/identity/register" %></li> 
+				<li><%= link_to "login", "/auth/identity" %>
 			<% end %></li>
 	        </ul>
 	      </div>
