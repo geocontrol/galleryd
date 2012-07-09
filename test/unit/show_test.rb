@@ -8,6 +8,8 @@
 #  end        :date
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
+#  gallery_id :integer
+#  hashtag    :string(255)
 #
 
 require 'test_helper'

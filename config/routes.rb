@@ -1,15 +1,10 @@
 Galleryd::Application.routes.draw do
-
- # get "static_pages/home"
-
-  # get "static_pages/help"
+  resources :users
 
 #  match '/help', :to => 'static_pages#help'
    match '/about', :to => 'static_pages#about'
    match '/contact', :to => 'static_pages#contact'
   
-# get '/login', :to => 'sessions#new', :as => :login
-#  get '/logout', :to => 'sessions#destroy', :as => :logout
   match '/auth/:provider/callback', :to => 'sessions#create'
   match 'signout', to: 'sessions#destroy', as: 'signout'
   match '/auth/failure', :to => 'sessions#failure'
